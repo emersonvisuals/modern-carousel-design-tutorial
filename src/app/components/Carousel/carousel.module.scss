@@ -1,0 +1,140 @@
+.carouselContainer {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vw;
+
+    .contentContainer {
+        .titleContainer {
+            padding: 0 0 2rem 0;
+        }
+
+        .descriptionContainer {
+            padding: 0 0 2rem 0;
+        }
+    }
+
+    .imagesContainer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        height: 35rem;
+
+        .firstContainer {
+            z-index: 2;
+            width: clamp(20rem, 22.5vw, 25rem);
+            height: auto;
+            position: absolute;
+
+            .first {
+                width: clamp(20rem, 22.5vw, 25rem);
+                height: auto;
+                border: 5px solid #eb5757;
+                border-radius: 2rem;
+            }
+        }
+
+        .secondContainer {
+            z-index: 1;
+            width: clamp(20rem, 22.5vw, 25rem);
+            height: auto;
+            position: absolute;
+
+            .second {
+                width: clamp(20rem, 22.5vw, 25rem);
+                height: auto;
+                border: 5px solid #eb5757;
+                border-radius: 2rem;
+            }
+        }
+
+        .thirdContainer {
+            z-index: 0;
+            width: clamp(20rem, 22.5vw, 25rem);
+            height: auto;
+            position: absolute;
+
+            .third {
+                width: clamp(20rem, 22.5vw, 25rem);
+                height: auto;
+                border: 5px solid #eb5757;
+                border-radius: 2rem;
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 10rem;
+            z-index: 3;
+            transform: translateY(5rem);
+
+            .previousContainer,
+            .nextContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: solid 2px transparent;
+                transition: border-color 0.3s ease, transform 0.3s ease;
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+
+            .previousContainer:hover,
+            .nextContainer:hover {
+                border-color: #eb5757;
+                transform: scale(1.05);
+            }
+
+            .disabled {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: solid 2px transparent;
+                transition: border-color 0.3s ease, transform 0.3s ease;
+                height: 4.5rem;
+                width: 4.5rem;
+                cursor: inherit;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .carouselContainer {
+        padding: 0 5vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .carouselContainer {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+
+        .contentContainer {
+            padding: 5rem 0 5rem 0;
+        }
+
+        .imagesContainer {
+            padding: 0 0 5rem 0;
+
+            .controls {
+                padding: 0 0 4rem 0;
+            }
+        }
+    }
+}
